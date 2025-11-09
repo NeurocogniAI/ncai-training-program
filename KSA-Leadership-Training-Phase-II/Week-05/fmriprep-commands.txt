@@ -1,0 +1,19 @@
+fmriprep-docker C:\Users\Azam\Desktop\BIDS_Dataset C:\Users\Azam\Desktop\BIDS_Dataset\output participant ^
+  --participant-label 01 ^
+  --fs-license-file C:\Users\Azam\Desktop\freesurfer_license\license.txt
+
+## IRNORE SLICE TIMING
+
+fmriprep-docker C:\Users\Azam\Desktop\BIDS_Dataset C:\Users\Azam\Desktop\BIDS_Dataset\output participant ^
+  --participant-label 01 ^
+  --fs-license-file C:\Users\Azam\Desktop\freesurfer_license\license.txt ^
+  --ignore slicetiming ^
+  --mem-mb 16000 ^
+  --nthreads 8 ^
+  --output-spaces MNI152NLin2009cAsym T1w
+
+
+
+
+docker run -ti --rm -v C:\Users\Azam\Desktop\sub_01:/data:ro -v C:\Users\Azam\Desktop\sub_01\output:/out nipreps/fmriprep:latest /data /out participant --participant-label 01 --fs-license-file /data/license.txt
+
